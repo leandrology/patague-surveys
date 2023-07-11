@@ -12,7 +12,7 @@
 
 <br>
 
-<img src="./screenshot.jpg" alt="Screenshot">
+<img src="./screenshot.jpg" alt="Screenshot.jpeg">
 
 <br>
 
