@@ -12,7 +12,7 @@
 
 <br>
 
-<img src="./screenshot.jpg" alt="Screenshot">
+<img src="./screenshot.jpg" alt="Screenshot.jpeg">
 
 <br>
 
@@ -20,7 +20,7 @@
 
 ## Demo
 
-📌 [https://tailnext.vercel.app/](https://tailnext.vercel.app/)
+📌 [https:///patague-land-surveys.vercel.app/)/](https:///patague-land-surveys.vercel.app/)
 
 <br>
 
