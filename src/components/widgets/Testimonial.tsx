@@ -16,7 +16,26 @@ const Testimonial = () => {
       <section className="bg-primary-50 dark:bg-slate-800" id="testimonial">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           {header && <HeaderWidget header={header} titleClassname="text-3xl sm:text-5xl" />}
-          <Swiper modules={[Autoplay]} autoplay slidesPerView={3}>
+          <Swiper modules={[Autoplay]} 
+                  autoplay 
+                  slidesPerView={3}
+                  breakpoints={{
+                    320: {
+                      slidesPerView: 1,
+                    },
+                    480: {
+                      slidesPerView: 1,
+                    },
+                    // when window width is >= 640px
+                    640: {
+                      slidesPerView: 2,
+                    },
+                    // when window width is >= 768px
+                    768: {
+                      slidesPerView: 3,
+                    },
+                  }}
+                  >
             <div className="flex items-stretch justify-center">
               <div className="grid grid-cols-3 gap-3 dark:text-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                 {testimonials.map(({ name, occupation, comment, image, icon: Icon, href }, index) => (
@@ -27,7 +46,6 @@ const Testimonial = () => {
                           // href={href}
                           // target="_blank"
                           rel="noopener noreferrer"
-                          key={`item-testimonial-${index}`}
                           className="card-body"
                         >
                           <div className="mb-4 flex">
