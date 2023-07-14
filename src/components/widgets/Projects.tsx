@@ -50,7 +50,7 @@ const Projects = () => {
                               height={500}
                               alt={image.alt}
                               sizes="(max-width: 64rem) 100vw, 1024px"
-                              className="mx-auto h-auto w-full scale-90 rounded-md bg-gray-400 transition delay-150 ease-in-out hover:-translate-y-1 hover:scale-100 dark:bg-slate-700"
+                              className="mx-auto h-auto w-full scale-90 cursor-pointer rounded-md bg-gray-400 object-cover transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-100 dark:bg-slate-700"
                             />
                           </Link>
                         </div>
