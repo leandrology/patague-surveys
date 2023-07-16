@@ -450,7 +450,7 @@ export const callToActionData: CallToActionProps = {
     },
     {
       title: 'Learn more',
-      description: 'Class aptent taciti sociosqu ad litora torquent per conubia.',
+      description: 'Ad litora torquent per conubia class aptent taciti sociosqu.',
       href: '/',
     },
     {
