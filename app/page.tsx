@@ -23,7 +23,6 @@ import {
 } from '~/shared/data';
 import Contact from '~/components/widgets/Contact';
 import Projects from '~/components/widgets/Projects';
-
 export const metadata: Metadata = {
   title: SITE.title,
 };
@@ -32,13 +31,15 @@ export default function Page() {
   return (
     <>
       <Hero data={heroData} />
+
       {/* <SocialProof {...socialProofData} /> */}
       <Features3 {...featuresData} />
-      <Projects  />
+      <Projects />
       <Steps />
       <Testimonial />
       <Team />
       <FAQs2 {...faqsData2} />
+
       {/* <Contact /> */}
       <CallToAction2 {...callToActionData} />
     </>

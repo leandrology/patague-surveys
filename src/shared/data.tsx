@@ -190,7 +190,7 @@ export const hero2Data: HeroProps = {
   },
   image: {
     src: hero2Img,
-    alt: 'Hero TailNext',
+    alt: 'Hero',
   },
 };
 
