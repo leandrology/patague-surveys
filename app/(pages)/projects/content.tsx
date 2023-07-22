@@ -24,7 +24,7 @@ const Content = () => {
             isAfterContent ? 'pb-16 pt-1 md:pb-20' : 'py-16 md:py-20'
           }`}
         >
-          {header && <HeaderWidget header={header} titleClassname="text-3xl sm:text-5xl" />}
+          {header && <HeaderWidget header={header} titleClassname="text-4xl md:text-5xl" />}
           <div className="mx-auto max-w-7xl">
             <div className="self-center md:basis-1/2">
               <Swiper
