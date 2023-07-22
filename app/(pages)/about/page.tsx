@@ -14,7 +14,7 @@ const Page = () => {
     <>
       <Hero2 data={hero2Data} />
       <Stats {...statsData} />
-      <Features4 {...featuresData3} />
+      {/* <Features4 {...featuresData3} /> */}
     </>
   );
 };

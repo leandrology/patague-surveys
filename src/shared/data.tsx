@@ -493,11 +493,7 @@ export const callToActionData2: CallToActionProps = {
 // Feature data
 export const featuresData: FeaturesProps = {
   header: {
-    title: (
-      <>
-        Services
-      </>
-    ),
+    title: <>Services</>,
     subtitle:
       'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.',
     highlight: '',
@@ -510,7 +506,7 @@ export const featuresData: FeaturesProps = {
       icon: IconMap2,
       link: {
         label: 'Learn More',
-        href: '/',
+        href: '/services/lot-surveys',
       },
     },
     {
@@ -520,7 +516,7 @@ export const featuresData: FeaturesProps = {
       icon: IconGeometry,
       link: {
         label: 'Learn More',
-        href: '/',
+        href: '/services/engineering-surveys',
       },
     },
     {
@@ -530,7 +526,7 @@ export const featuresData: FeaturesProps = {
       icon: IconRoad,
       link: {
         label: 'Learn More',
-        href: '/',
+        href: '/services/vertical-surveys',
       },
     },
     {
@@ -540,7 +536,7 @@ export const featuresData: FeaturesProps = {
       icon: IconZoomPan,
       link: {
         label: 'Learn More',
-        href: '/',
+        href: '/services/custom-surveys',
       },
     },
     {
@@ -550,7 +546,7 @@ export const featuresData: FeaturesProps = {
       icon: IconSitemap,
       link: {
         label: 'Learn More',
-        href: '/',
+        href: '/services/construction-surveys',
       },
     },
     {
@@ -560,7 +556,7 @@ export const featuresData: FeaturesProps = {
       icon: IconWorldSearch,
       link: {
         label: 'Learn More',
-        href: '/',
+        href: '/services/topographic-surveys',
       },
     },
   ],
@@ -604,7 +600,8 @@ export const featuresData2: FeaturesProps = {
 export const featuresData3: FeaturesProps = {
   header: {
     title: 'Services',
-    subtitle: 'We use the latest technology and solutions in EDM, laser, GPS/GNSS and drones to complete our services. Our services are aligned with the regulations of land surveying methods as mandated by the DENR.'
+    subtitle:
+      'We use the latest technology and solutions in EDM, laser, GPS/GNSS and drones to complete our services. Our services are aligned with the regulations of land surveying methods as mandated by the DENR.',
   },
   items: [
     {
@@ -614,7 +611,7 @@ export const featuresData3: FeaturesProps = {
       icon: IconMap2,
       link: {
         // label: 'Learn More',
-        href: '/',
+        href: '/services/lot-surveys',
       },
     },
     {
@@ -624,7 +621,7 @@ export const featuresData3: FeaturesProps = {
       icon: IconGeometry,
       link: {
         // label: 'Learn More',
-        href: '/',
+        href: '/services/engineering-surveys',
       },
     },
     {
@@ -634,7 +631,7 @@ export const featuresData3: FeaturesProps = {
       icon: IconRoad,
       link: {
         // label: 'Learn More',
-        href: '/',
+        href: '/services/vertical-surveys',
       },
     },
     {
@@ -644,7 +641,7 @@ export const featuresData3: FeaturesProps = {
       icon: IconZoomPan,
       link: {
         // label: 'Learn More',
-        href: '/',
+        href: '/services/custom-surveys',
       },
     },
     {
@@ -654,7 +651,7 @@ export const featuresData3: FeaturesProps = {
       icon: IconSitemap,
       link: {
         // label: 'Learn More',
-        href: '/',
+        href: '/services/construction-surveys',
       },
     },
     {
@@ -664,7 +661,7 @@ export const featuresData3: FeaturesProps = {
       icon: IconWorldSearch,
       link: {
         // label: 'Learn More',
-        href: '/',
+        href: '/services/topographic-surveys',
       },
     },
   ],

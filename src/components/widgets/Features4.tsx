@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { FeaturesProps } from '~/shared/types';
 import HeaderWidget from '../common/HeaderWidget';
 
@@ -11,20 +13,22 @@ const Features4 = ({ header, items }: FeaturesProps) => (
             key={`item-feature3-${index}`}
             className="relative flex flex-col items-center justify-between rounded border border-transparent bg-white p-6 text-center shadow-lg transition hover:shadow-md dark:border-slate-700 dark:bg-slate-800"
           >
-            <div>
-              <div className="mb-6 flex justify-center">
-                {Icon && <Icon className="h-14 w-14 text-gray-700 dark:text-slate-200" />}
+            <Link href={link.href}>
+              <div>
+                <div className="mb-6 flex justify-center">
+                  {Icon && <Icon className="h-14 w-14 text-gray-700 dark:text-slate-200" />}
+                </div>
+                <h3 className="mb-3 text-xl font-bold">{title}</h3>
+                <p className="text-gray-600 dark:text-slate-400">{description}</p>
               </div>
-              <h3 className="mb-3 text-xl font-bold">{title}</h3>
-              <p className="text-gray-600 dark:text-slate-400">{description}</p>
-            </div>
-            {link && (
-              <div className="pt-4">
-                <a className="flex font-bold text-blue-600 hover:underline dark:text-gray-200" href={link.href}>
-                  {link.label}
-                </a>
-              </div>
-            )}
+              {/* {link && (
+                <div className="pt-4">
+                  <a className="flex font-bold text-blue-600 hover:underline dark:text-gray-200" href={link.href}>
+                    {link.label}
+                  </a>
+                </div>
+              )} */}
+            </Link>
           </div>
         ))}
       </div>
