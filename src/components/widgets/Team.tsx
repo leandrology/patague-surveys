@@ -41,17 +41,18 @@ const Team = () => {
                   <div key={`item-team-${index}`} className="p-2">
                     <Image
                       src={image.src}
-                      width={240}
-                      height={320}
+                      width={1080}
+                      height={720}
                       alt={image.alt}
-                      className="h-72 w-60 rounded-md object-cover"
+                      className="mx-auto flex h-72 w-60 rounded-md object-cover md:ml-0"
+                      // className="h-auto w-auto flex rounded-md object-cover"
                     />
                     <div className="relative mt-3 text-center">
                       <h3 className="mb-1.5 text-xl font-bold">{name}</h3>
                       <p className="mb-7 text-base font-medium capitalize text-gray-600 dark:text-slate-400">
                         {occupation}
                       </p>
-                      <ul className="absolute right-[-10px] top-[-290px] block list-none rounded-md bg-white/70 shadow-[0_0_8px_rgba(0,0,0,0.2)] backdrop-blur-sm dark:bg-white/40">
+                      <ul className="absolute right-[-5px] top-[-290px] block list-none rounded-md bg-white/70 shadow-[0_0_8px_rgba(0,0,0,0.2)] backdrop-blur-sm dark:bg-white/40">
                         {items &&
                           items.map(
                             ({ title, href, icon: Icon }, index2) =>

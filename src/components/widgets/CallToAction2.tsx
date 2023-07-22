@@ -49,7 +49,9 @@ const CallToAction2 = ({ title, subtitle, items }: CallToActionProps) => (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
       <div className="row-gap-10 grid gap-6 md:grid-cols-2">
         <div className="mx-auto md:my-auto md:ml-0 md:pb-6 md:pr-24">
-          <h2 className="mb-3 flex justify-center text-5xl font-bold md:justify-start md:text-6xl">{title}</h2>
+          <h2 className="mb-3 flex justify-center text-center text-5xl font-bold md:justify-start md:text-left md:text-6xl">
+            {title}
+          </h2>
           <p className="text-center text-xl text-gray-200 dark:text-slate-300 md:text-left">{subtitle}</p>
         </div>
         <div className="-mb-6">

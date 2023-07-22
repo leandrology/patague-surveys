@@ -844,8 +844,7 @@ export const stepsData: StepsProps = {
 export const teamData: TeamProps = {
   header: {
     title: 'Our Team',
-    subtitle:
-      'Meet our skillful team members',
+    subtitle: 'Meet our skillful team members',
     // highlight: 'Team',
   },
   teams: [
@@ -858,8 +857,8 @@ export const teamData: TeamProps = {
       },
       items: [
         {
-          title: 'Know more on Twitter',
-          icon: IconBrandTwitter,
+          title: 'Know more on Facebook',
+          icon: IconBrandFacebook,
           href: '#',
         },
         {
@@ -908,8 +907,8 @@ export const teamData: TeamProps = {
       },
       items: [
         {
-          title: 'Know more on Twitter',
-          icon: IconBrandTwitter,
+          title: 'Know more on Facebook',
+          icon: IconBrandFacebook,
           href: '#',
         },
         {
