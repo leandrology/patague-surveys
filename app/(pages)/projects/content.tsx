@@ -12,7 +12,6 @@ import { Controller } from 'swiper/modules';
 import CallToAction from '~/components/widgets/CallToAction';
 import { callToActionData2, faqs4Data } from '~/shared/data';
 import { projectsData2 } from '~/shared/data';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const Content = () => {
   const { projects, header, isAfterContent } = projectsData2;
