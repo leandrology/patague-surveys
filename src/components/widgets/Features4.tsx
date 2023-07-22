@@ -13,7 +13,7 @@ const Features4 = ({ header, items }: FeaturesProps) => (
             key={`item-feature3-${index}`}
             className="relative flex flex-col items-center justify-between rounded border border-transparent bg-white p-6 text-center shadow-lg transition hover:shadow-md dark:border-slate-700 dark:bg-slate-800"
           >
-            <Link href={link.href}>
+            <Link href={{ pathname: link?.href }}>
               <div>
                 <div className="mb-6 flex justify-center">
                   {Icon && <Icon className="h-14 w-14 text-gray-700 dark:text-slate-200" />}
