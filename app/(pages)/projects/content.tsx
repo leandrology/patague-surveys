@@ -12,9 +12,46 @@ import { Controller } from 'swiper/modules';
 import CallToAction from '~/components/widgets/CallToAction';
 import { callToActionData2, faqs4Data } from '~/shared/data';
 import { projectsData2 } from '~/shared/data';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+import { groq } from 'next-sanity';
+import { Client } from 'app/lib/sanity';
+import project from 'sanity/schemas/project';
+import { urlFor } from 'app/lib/sanityImageUrl';
+
+const queryClient = new QueryClient();
+
+export default function Page() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Content />
+    </QueryClientProvider>
+  );
+}
 
 const Content = () => {
   const { projects, header, isAfterContent } = projectsData2;
+
+  const { isLoading, error, data } = useQuery('project', async () => {
+    return Client.fetch(groq`*[_type == "project"]`);
+  });
+
+  // const { isLoading, error, data } = useQuery({
+  //   queryKey: ['projects'],
+  // });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error </div>;
+  }
+
+  // const PortableTextComponent = {
+  //   types: {
+  //     image: ({ value }: { value: any }) => <Image src={urlFor(value).url()} alt="Image" />,
+  //   },
+  // };
 
   return (
     <>
@@ -37,22 +74,26 @@ const Content = () => {
                 navigation={true}
                 modules={[Pagination, Navigation]}
               >
-                {projects.map(({ title, subtitle, interval, image }, index) => (
-                  <SwiperSlide key={index}>
+                {data.map((project: any) => (
+                  <SwiperSlide key={project._id}>
                     <div className="ml-4">
-                      {title && (
-                        <h3 className="text-2xl font-medium leading-6 text-gray-900 dark:text-white">{title}</h3>
+                      {project.title && (
+                        <h3 className="text-2xl font-medium leading-6 text-gray-900 dark:text-white">
+                          {project.title}
+                        </h3>
                       )}
-                      {subtitle && <p className="mb-5 mt-2 text-lg text-gray-600 dark:text-slate-400">{subtitle}</p>}
+                      {project.subtitle && (
+                        <p className="mb-5 mt-2 text-lg text-gray-600 dark:text-slate-400">{project.subtitle}</p>
+                      )}
                     </div>
                     <div aria-hidden="true" className="mt-10 md:mt-0 md:basis-1/2">
-                      {image && (
+                      {project.image && (
                         <div className="relative m-auto max-w-4xl">
                           <Image
-                            src={image.src}
+                            src={urlFor(project.image).url()}
                             width={100}
                             height={500}
-                            alt={image.alt}
+                            alt={project.title}
                             sizes="(max-width: 64rem) 100vw, 1024px"
                             className="mx-auto h-auto w-full rounded-md bg-gray-400 dark:bg-slate-700"
                           />
@@ -69,4 +110,3 @@ const Content = () => {
     </>
   );
 };
-export default Content;

@@ -23,6 +23,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'www.themoviedb.org',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
     ],
   },
   experimental: { appDir: true },
