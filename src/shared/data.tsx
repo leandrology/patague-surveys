@@ -896,6 +896,31 @@ export const teamData: TeamProps = {
       ],
     },
     {
+      name: 'Engr. Yusef Harrelson Patague',
+      occupation: 'CEO / Founder · Licensed Geodetic Engineer',
+      image: {
+        src: 'https://images.unsplash.com/photo-1637858868799-7f26a0640eb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        alt: 'Engr. Yusef Harrelson Patague',
+      },
+      items: [
+        {
+          title: 'Know more on Facebook',
+          icon: IconBrandFacebook,
+          href: '#',
+        },
+        {
+          title: 'Know more on Linkedin',
+          icon: IconBrandLinkedin,
+          href: '#',
+        },
+        {
+          title: 'Contact by email',
+          icon: IconMail,
+          href: '#',
+        },
+      ],
+    },
+    {
       name: 'Engr. Mike Angel Juera',
       occupation: 'Vice-President · Licensed Geodetic Engineer',
       image: {
