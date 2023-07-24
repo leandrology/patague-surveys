@@ -15,7 +15,6 @@ import { projectsData2 } from '~/shared/data';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import { groq } from 'next-sanity';
 import { Client } from 'app/lib/sanity';
-import project from 'sanity/schemas/project';
 import { urlFor } from 'app/lib/sanityImageUrl';
 
 const queryClient = new QueryClient();
@@ -35,10 +34,6 @@ const Content = () => {
     return Client.fetch(groq`*[_type == "project"]`);
   });
 
-  // const { isLoading, error, data } = useQuery({
-  //   queryKey: ['projects'],
-  // });
-
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -46,12 +41,6 @@ const Content = () => {
   if (error) {
     return <div>Error </div>;
   }
-
-  // const PortableTextComponent = {
-  //   types: {
-  //     image: ({ value }: { value: any }) => <Image src={urlFor(value).url()} alt="Image" />,
-  //   },
-  // };
 
   return (
     <>

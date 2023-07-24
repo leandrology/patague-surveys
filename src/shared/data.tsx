@@ -671,12 +671,14 @@ export const featuresData3: FeaturesProps = {
 export const projectsData: ProjectProps = {
   header: {
     title: 'Projects',
-    subtitle: 'We can provide you with different land survey services based on your needs. Showcased here are some projects we have delivered/completed to delighted customers.',
+    subtitle:
+      'We can provide you different land survey services based on your needs. Showcased here are some projects we have delivered/completed to our delighted customers. For full list of our accomplishments, check out our Projects page.',
   },
-    projects: [
+  projects: [
     {
       title: 'San Juanico Bridge',
-      subtitle: 'The San Juanico Bridge is part of the Pan-Philippine Highway and stretches from Samar to Leyte across the San Juanico Strait in the Philippines. Its longest length is a steel girder viaduct built on reinforced concrete piers, and its main span is of an arch-shaped truss design.',
+      subtitle:
+        'The San Juanico Bridge is part of the Pan-Philippine Highway and stretches from Samar to Leyte across the San Juanico Strait in the Philippines. Its longest length is a steel girder viaduct built on reinforced concrete piers, and its main span is of an arch-shaped truss design.',
       interval: 2000,
       image: {
         src: project1Img,
@@ -685,7 +687,8 @@ export const projectsData: ProjectProps = {
     },
     {
       title: 'Four Lanes - Santiago City',
-      subtitle: 'Four Lanes Santiago, City is one of the popular Transportation Service located in Four Lanes ,Santiago listed under Local business in Santiago , Travel & Transportation in Santiago.',
+      subtitle:
+        'Four Lanes Santiago, City is one of the popular Transportation Service located in Four Lanes ,Santiago listed under Local business in Santiago , Travel & Transportation in Santiago.',
       interval: 2000,
       image: {
         src: project2Img,
@@ -694,15 +697,16 @@ export const projectsData: ProjectProps = {
     },
     {
       title: 'Northeastern College',
-      subtitle: 'The Northeastern College is a public, non-sectarian, coeducational secondary and higher education institution located in Santiago City, Philippines. The College offers a range of degrees at both graduate and post-graduate level.',
+      subtitle:
+        'The Northeastern College is a public, non-sectarian, coeducational secondary and higher education institution located in Santiago City, Philippines. The College offers a range of degrees at both graduate and post-graduate level.',
       interval: 2000,
       image: {
         src: project3Img,
         alt: 'Northeastern College',
       },
     },
-  ]
-}
+  ],
+};
 
 export const projectsData2: ProjectProps = {
   header: {
