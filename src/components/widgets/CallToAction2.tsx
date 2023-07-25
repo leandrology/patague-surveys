@@ -1,5 +1,8 @@
 import { IconChevronRight } from '@tabler/icons-react';
 import { CallToActionProps, Item } from '~/shared/types';
+import Reveal from '../atoms/Reveal';
+import RevealRight from '../atoms/RevealRight';
+import RevealLeft from '../atoms/RevealLeft';
 
 const Card = ({ title, description, href, form }: Item) => (
   <div className="mb-6 rounded-md border-gray-400 bg-primary-50 px-5 py-4 text-base font-medium text-gray-700 shadow-md dark:bg-slate-900">
@@ -49,29 +52,35 @@ const CallToAction2 = ({ title, subtitle, items }: CallToActionProps) => (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
       <div className="row-gap-10 grid gap-6 md:grid-cols-2">
         <div className="mx-auto md:my-auto md:ml-0 md:pb-6 md:pr-24">
-          <h2 className="mb-3 flex justify-center text-center text-5xl font-bold md:justify-start md:text-left md:text-6xl">
-            {title}
-          </h2>
-          <p className="text-center text-xl text-gray-200 dark:text-slate-300 md:text-left">{subtitle}</p>
+          <RevealRight>
+            <h2 className="mb-3 flex justify-center text-center text-5xl font-bold md:justify-start md:text-left md:text-6xl">
+              {title}
+            </h2>
+          </RevealRight>
+          <RevealLeft>
+            <p className="text-center text-xl text-gray-200 dark:text-slate-300 md:text-left">{subtitle}</p>
+          </RevealLeft>
         </div>
         <div className="-mb-6">
           {items &&
             items.map(({ title, description, href, form }, index) => (
-              <div key={`call-to-action-item-${index}`}>
-                {href ? (
-                  <a
-                    href={href}
-                    className="w-auto sm:mb-0"
-                    // target="_blank"
-                    rel="noopener noreferrer"
-                    key={`item-cta-${index}`}
-                  >
+              <Reveal>
+                <div key={`call-to-action-item-${index}`}>
+                  {href ? (
+                    <a
+                      href={href}
+                      className="w-auto sm:mb-0"
+                      // target="_blank"
+                      rel="noopener noreferrer"
+                      key={`item-cta-${index}`}
+                    >
+                      <Card title={title} description={description} href={href} form={form} />
+                    </a>
+                  ) : (
                     <Card title={title} description={description} href={href} form={form} />
-                  </a>
-                ) : (
-                  <Card title={title} description={description} href={href} form={form} />
-                )}
-              </div>
+                  )}
+                </div>
+              </Reveal>
             ))}
         </div>
       </div>

@@ -16,6 +16,9 @@ import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import { groq } from 'next-sanity';
 import { Client } from 'app/lib/sanity';
 import { urlFor } from 'app/lib/sanityImageUrl';
+import Reveal from '~/components/atoms/Reveal';
+import RevealDown from '~/components/atoms/RevealDown';
+import RevealEase from '~/components/atoms/RevealEase';
 
 const queryClient = new QueryClient();
 
@@ -50,7 +53,9 @@ const Content = () => {
             isAfterContent ? 'pb-16 pt-1 md:pb-20' : 'py-16 md:py-20'
           }`}
         >
-          {header && <HeaderWidget header={header} titleClassname="text-4xl md:text-5xl" />}
+          <Reveal>
+            <div>{header && <HeaderWidget header={header} titleClassname="text-4xl md:text-5xl" />}</div>
+          </Reveal>
           <div className="mx-auto max-w-7xl">
             <div className="self-center md:basis-1/2">
               <Swiper
@@ -65,30 +70,34 @@ const Content = () => {
               >
                 {data.map((project: any) => (
                   <SwiperSlide key={project._id}>
-                    <div className="ml-4">
-                      {project.title && (
-                        <h3 className="text-2xl font-medium leading-6 text-gray-900 dark:text-white">
-                          {project.title}
-                        </h3>
-                      )}
-                      {project.subtitle && (
-                        <p className="mb-5 mt-2 text-lg text-gray-600 dark:text-slate-400">{project.subtitle}</p>
-                      )}
-                    </div>
-                    <div aria-hidden="true" className="mt-10 md:mt-0 md:basis-1/2">
-                      {project.image && (
-                        <div className="relative m-auto max-w-4xl">
-                          <Image
-                            src={urlFor(project.image).url()}
-                            width={100}
-                            height={500}
-                            alt={project.title}
-                            sizes="(max-width: 64rem) 100vw, 1024px"
-                            className="mx-auto h-auto w-full rounded-md bg-gray-400 dark:bg-slate-700"
-                          />
-                        </div>
-                      )}
-                    </div>
+                    <RevealDown>
+                      <div className="ml-4">
+                        {project.title && (
+                          <h3 className="text-2xl font-medium leading-6 text-gray-900 dark:text-white">
+                            {project.title}
+                          </h3>
+                        )}
+                        {project.subtitle && (
+                          <p className="mb-5 mt-2 text-lg text-gray-600 dark:text-slate-400">{project.subtitle}</p>
+                        )}
+                      </div>
+                    </RevealDown>
+                    <RevealEase>
+                      <div aria-hidden="true" className="mt-10 md:mt-0 md:basis-1/2">
+                        {project.image && (
+                          <div className="relative m-auto max-w-4xl">
+                            <Image
+                              src={urlFor(project.image).url()}
+                              width={100}
+                              height={100}
+                              alt={project.title}
+                              sizes="(max-width: 64rem) 100vw, 1024px"
+                              className="mx-auto h-auto w-full rounded-md bg-gray-400 dark:bg-slate-700"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </RevealEase>
                   </SwiperSlide>
                 ))}
               </Swiper>

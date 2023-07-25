@@ -1,5 +1,7 @@
 import { StatsProps } from '~/shared/types';
 import { toUiAmount } from '~/utils/utils';
+import Reveal from '../atoms/Reveal';
+import RevealLeft from '../atoms/RevealLeft';
 
 const Stats = ({ items }: StatsProps) => {
   return (
@@ -11,12 +13,16 @@ const Stats = ({ items }: StatsProps) => {
               key={`item-stat-${index}`}
               className="mb-12 text-center md:mb-0 md:border-r md:last:border-none dark:md:border-slate-500"
             >
-              <div className="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
-                {title}
-              </div>
-              <p className="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">
-                {description}
-              </p>
+              <Reveal>
+                <div className="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
+                  {title}
+                </div>
+              </Reveal>
+              <RevealLeft>
+                <p className="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base">
+                  {description}
+                </p>
+              </RevealLeft>
             </div>
           ))}
         </div>

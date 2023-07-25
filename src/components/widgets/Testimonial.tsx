@@ -8,6 +8,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
+import Reveal from '../atoms/Reveal';
+import RevealEase from '../atoms/RevealEase';
+import RevealLeft from '../atoms/RevealLeft';
 const Testimonial = () => {
   const { header, testimonials } = testimonialData;
 
@@ -15,7 +18,9 @@ const Testimonial = () => {
     <>
       <section className="bg-primary-50 dark:bg-slate-800" id="testimonial">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-          {header && <HeaderWidget header={header} titleClassname="text-4xl md:text-5xl" />}
+          <Reveal>
+            <div>{header && <HeaderWidget header={header} titleClassname="text-4xl md:text-5xl" />}</div>
+          </Reveal>
           <Swiper
             modules={[Autoplay]}
             autoplay
@@ -49,27 +54,36 @@ const Testimonial = () => {
                           rel="noopener noreferrer"
                           className="card-body"
                         >
-                          <div className="mb-4 flex">
-                            {image && (
-                              <Image
-                                src={image.src}
-                                width={48}
-                                height={48}
-                                alt={image.alt}
-                                className="mr-4 h-12 w-12 rounded-full object-cover shadow-lg"
-                              />
-                            )}
-                            <div className="text-left">
-                              <h3 className="font-semibold">{name}</h3>
-                              <span className="">{occupation}</span>
+                          <RevealLeft>
+                            <div className="mb-4 flex">
+                              {image && (
+                                <Image
+                                  src={image.src}
+                                  width={48}
+                                  height={48}
+                                  alt={image.alt}
+                                  className="mr-4 h-12 w-12 rounded-full object-cover shadow-lg"
+                                />
+                              )}
+                              <div className="text-left">
+                                <h3 className="font-semibold">{name}</h3>
+                                <span className="">{occupation}</span>
+                              </div>
                             </div>
-                          </div>
-                          {comment && (
-                            <p className="m-b-30 font-light dark:text-slate-400">{`"${comment.slice(0, 150)}..."`}</p>
-                          )}
-                          {href && Icon && (
-                            <Icon className="mx-auto mt-4 h-6 w-6 text-primary-600 dark:text-slate-200" />
-                          )}
+                          </RevealLeft>
+                          <RevealEase>
+                            <div>
+                              {comment && (
+                                <p className="m-b-30 font-light dark:text-slate-400">{`"${comment.slice(
+                                  0,
+                                  150,
+                                )}..."`}</p>
+                              )}
+                              {href && Icon && (
+                                <Icon className="mx-auto mt-4 h-6 w-6 text-primary-600 dark:text-slate-200" />
+                              )}
+                            </div>
+                          </RevealEase>
                         </a>
                       </div>
                     </div>
